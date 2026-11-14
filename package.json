@@ -2,6 +2,8 @@
   "name": "proyecto-final-d",
   "private": true,
   "version": "0.0.0",
+  "author": "José Daniel Ventura de León",
+  "license": "CC-BY-NC-SA-4.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

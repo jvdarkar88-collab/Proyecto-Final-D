@@ -120,8 +120,31 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="bg-slate-900 py-6 text-center text-sm text-slate-300">
-        <p>Plan de Clase Digital Interactivo · Matemáticas · Hecho con React, Framer Motion y NocoDB</p>
+      <footer className="bg-slate-900 py-8 text-center text-sm text-slate-300">
+        <p>Plan de Clase Digital Interactivo · Matemáticas</p>
+        <p className="mt-1">
+          Autor y desarrollador:{" "}
+          <strong className="text-white">José Daniel Ventura de León</strong>
+        </p>
+
+        <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"
+          target="_blank"
+          rel="license noopener noreferrer"
+          className="mt-3 inline-block"
+        >
+          <img
+            src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
+            alt="Licencia Creative Commons BY-NC-SA 4.0"
+            width="88"
+            height="31"
+          />
+        </a>
+        <p className="mx-auto mt-2 max-w-xl px-4 text-xs text-slate-400">
+          Esta obra está bajo una licencia Creative Commons
+          Atribución-NoComercial-CompartirIgual 4.0 Internacional. Puedes compartirla y
+          adaptarla citando al autor, sin uso comercial y con la misma licencia.
+        </p>
       </footer>
     </>
   );
