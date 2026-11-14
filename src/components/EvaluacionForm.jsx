@@ -41,12 +41,16 @@ export default function EvaluacionForm({ puntaje, onGuardado }) {
     }
   };
 
-  const campo = "w-full rounded-lg border border-slate-300 px-3 py-2";
+  const campo =
+    "w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-200";
 
   return (
-    <form onSubmit={enviar} className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-md">
-      <p className="text-center text-lg font-bold text-indigo-700">
-        Tu puntaje: <span className="text-3xl">{puntaje}%</span>
+    <form
+      onSubmit={enviar}
+      className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+    >
+      <p className="text-center text-lg font-bold text-slate-700">
+        Tu puntaje: <span className="ecuacion text-4xl text-teal-700">{puntaje}%</span>
       </p>
 
       <div className="flex flex-col gap-4 sm:flex-row">
@@ -88,7 +92,7 @@ export default function EvaluacionForm({ puntaje, onGuardado }) {
         disabled={enviando}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.95 }}
-        className="rounded-xl bg-violet-600 px-4 py-3 font-bold text-white shadow disabled:opacity-60"
+        className="rounded-xl bg-teal-700 px-4 py-3 font-bold text-white shadow hover:bg-teal-800 disabled:opacity-60"
       >
         {enviando ? "Guardando..." : "Guardar mi resultado"}
       </motion.button>
@@ -99,7 +103,7 @@ export default function EvaluacionForm({ puntaje, onGuardado }) {
             key={mensaje.texto}
             role="status"
             className={`text-center font-semibold ${
-              mensaje.tipo === "ok" ? "text-emerald-600" : "text-red-600"
+              mensaje.tipo === "ok" ? "text-emerald-600" : "text-rose-600"
             }`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

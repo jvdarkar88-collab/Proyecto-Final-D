@@ -4,17 +4,61 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Fondo tipo cuaderno cuadriculado */
 body {
   margin: 0;
-  background: #f5f3ff;
-  color: #1e1b4b;
+  background-color: #f1f5f9;
+  background-image:
+    linear-gradient(rgba(15, 118, 110, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #0f172a;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Reset de estilos que trae la plantilla de Vite */
 #root {
   max-width: none;
   margin: 0;
   padding: 0;
   text-align: left;
+}
+
+/* Tipografía para ecuaciones y símbolos matemáticos */
+.ecuacion {
+  font-family: "Cambria Math", Cambria, Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.fondo-header {
+  background-color: #0f172a;
+  background-image: linear-gradient(135deg, #0f172a 0%, #115e59 100%);
+}
+
+.cuadricula-header {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Animación al mostrar una sección (se repite cada vez que deja de estar oculta) */
+.panel-in {
+  animation: panelIn 0.4s ease both;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-in {
+    animation: none;
+  }
 }

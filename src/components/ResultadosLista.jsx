@@ -34,16 +34,16 @@ export default function ResultadosLista({ refreshKey }) {
   }, [refreshKey]);
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-md">
-      <h3 className="text-lg font-bold text-indigo-700">Últimos resultados del grupo</h3>
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h3 className="text-lg font-bold text-teal-700">Últimos resultados del grupo</h3>
 
       {cargando && <p className="mt-3 text-slate-500">Cargando registros…</p>}
-      {error && <p className="mt-3 font-semibold text-red-600">{error}</p>}
+      {error && <p className="mt-3 font-semibold text-rose-600">{error}</p>}
       {!cargando && !error && resultados.length === 0 && (
         <p className="mt-3 text-slate-500">Todavía no hay resultados. ¡Sé el primero!</p>
       )}
 
-      <ul className="mt-3 flex flex-col gap-3">
+      <ul className="mt-3 flex flex-col gap-3 p-0">
         <AnimatePresence>
           {resultados.map((r) => (
             <motion.li
@@ -52,16 +52,16 @@ export default function ResultadosLista({ refreshKey }) {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
-              className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-indigo-50 p-3"
+              className="flex list-none flex-wrap items-center justify-between gap-2 rounded-xl bg-slate-50 p-3"
             >
               <div>
-                <p className="font-bold text-indigo-900">{r.nombre}</p>
+                <p className="font-bold text-slate-900">{r.nombre}</p>
                 <p className="text-sm text-slate-600">{r.grupo}</p>
                 {r.comentario && (
                   <p className="mt-1 text-sm italic text-slate-700">“{r.comentario}”</p>
                 )}
               </div>
-              <span className="rounded-full bg-violet-600 px-3 py-1 text-sm font-bold text-white">
+              <span className="ecuacion rounded-full bg-teal-700 px-3 py-1 text-sm font-bold not-italic text-white">
                 {r.puntaje}%
               </span>
             </motion.li>
